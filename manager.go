@@ -177,7 +177,7 @@ func (m *Manager) GetStats() (Stats, error) {
 		q = append(q, queue)
 	}
 
-	storeStats, err := m.opts.store.GetStats(q)
+	storeStats, err := m.opts.store.GetAllStats(q)
 
 	if err != nil && err != redis.Nil {
 		return stats, err
